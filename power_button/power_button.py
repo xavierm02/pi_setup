@@ -20,11 +20,11 @@ while True:
 		newButtonState = GPIO.input(5)
 		
 		if newButtonState != buttonState:
-			print("State just changed. Last change was " + str(buttonStateChangeDate - time.time()) + "s ago.")
+			print("State just changed. Last change was " + str(time.time() - buttonStateChangeDate) + "s ago.")
 			buttonState = newButtonState
 			buttonStateChangeDate = time.time()
 		
-		if buttonState and buttonStateChangeDate - time.time() >= secondsToShutdown:
+		if buttonState and time.time() - buttonStateChangeDate >= secondsToShutdown:
 			subprocess.call("shutdown -h now", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 		
 		time.sleep(.5)
