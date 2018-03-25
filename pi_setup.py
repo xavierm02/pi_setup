@@ -18,6 +18,6 @@ def setup_power_button():
 	# requires python3-rpi.gpio
 	sudo_ln_s(os.path.realpath("./power_button/power_button"), "/etc/init.d/power_button")
 	py_run.run("sudo update-rc.d power_button defaults")
-	py_run.run("sudo python /home/pi/scripts/shutdown.py &> /dev/null &")
+	py_run.run("sudo python /home/pi/pi_setup/power_button/power_button.py &> /dev/null &")
 	
 setup_power_button()
