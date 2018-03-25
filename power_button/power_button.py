@@ -20,6 +20,7 @@ while True:
 		newButtonState = GPIO.input(5)
 		
 		if newButtonState != buttonState:
+			print("State just changed. Last change was " + str(buttonStateChangeDate - time.time()) + "s ago.")
 			buttonState = newButtonState
 			buttonStateChangeDate = time.time()
 		
