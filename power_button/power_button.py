@@ -17,7 +17,7 @@ buttonState = True
 buttonStateChangeDate = time.time()
 
 while True:
-		newButtonState = GPIO.input(5)
+		newButtonState = not(GPIO.input(5)) # True if button is pressed
 		
 		if newButtonState != buttonState:
 			print("State just changed. Last change was " + str(time.time() - buttonStateChangeDate) + "s ago.")
