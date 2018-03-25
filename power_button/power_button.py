@@ -16,7 +16,7 @@ buttonState = True
 buttonStateChangeDate = time.time()
 
 while True:
-    newButtonState = GPIO.input(5)
+		newButtonState = GPIO.input(5)
 		
 		if newButtonState != buttonState:
 			buttonState = newButtonState
