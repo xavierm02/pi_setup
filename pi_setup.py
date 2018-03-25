@@ -12,7 +12,7 @@ def ln_s(source, target):
 def sudo_ln_s(source, target):
 	cmd = "sudo ln -s " + source + " " + target
 	cmd_str = "sudo ln -s " + py_run.uri(source) + " " + py_run.uri(target)
-	py_run.run(cmd, cmd_str=cmd_str, error_fatal=True)
+	py_run.run(cmd, cmd_str=cmd_str, error_fatal=False)
 
 def setup_power_button():
 	# requires python3-rpi.gpio
