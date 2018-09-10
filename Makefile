@@ -1,4 +1,4 @@
-all: power_led power_button toilet
+all: power_led
 
 init:
 	sudo apt install python3-pip python3-rpi.gpio hostapd haveged
@@ -21,4 +21,4 @@ endif
 power_button:
 	make init_script name=power_button
 
-.PHONY: all init init_script toilet power_button power_led
+.PHONY: all init init_script power_button
