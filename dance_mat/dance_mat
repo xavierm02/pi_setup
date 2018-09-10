@@ -1,0 +1,12 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides: dance_mat
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: S
+# Default-Stop: 
+# Short-Description: Make GPIO act as keybord input
+# Description: Make GPIO act as keybord input
+### END INIT INFO
+
+sudo python /home/pi/pi_setup/dance_mat/dance_mat.py &

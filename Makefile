@@ -1,4 +1,4 @@
-all: power_led
+all: power_button dance_mat
 
 init:
 	sudo apt install python3-pip python3-rpi.gpio hostapd haveged
@@ -21,4 +21,10 @@ endif
 power_button:
 	make init_script name=power_button
 
-.PHONY: all init init_script power_button
+dance_mat: dance_mat/pi-as-keyboard
+
+dance_mat/pi-as-keyboard:
+	(cd dance_mat; git clone https://github.com/c4software/pi-as-keyboard.git)
+	(cd dance_mat/pi-as-keyboard; sudo ./setup.sh)
+
+.PHONY: all init init_script power_button dance_mat
